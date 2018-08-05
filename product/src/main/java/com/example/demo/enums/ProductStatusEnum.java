@@ -1,12 +1,12 @@
 package com.example.demo.enums;
 
-import lombok.Data;
+
 import lombok.Getter;
 
 /**
  * Created by 黄逸晖 on 2018-08-01.
  */
-@Data
+@Getter
 public enum ProductStatusEnum {
     UP(0,"在架"),
     DOWN(1,"下架"),
