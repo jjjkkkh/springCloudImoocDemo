@@ -11,6 +11,13 @@
 	<name>springCloud_imooc_demo</name>
 	<description>Demo project for Spring Boot</description>
 
+	<modules>
+		<module>client</module>
+		<module>eureka</module>
+		<module>order</module>
+		<module>product</module>
+	</modules>
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
