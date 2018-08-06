@@ -1,15 +1,13 @@
 package com.example.demo.service;
 
 import com.example.demo.ProductApplicationTests;
-import com.example.demo.dataObject.ProductInfo;
+import com.example.product.dataObject.ProductInfo;
+import com.example.product.service.ProductService;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.validation.constraints.AssertTrue;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by 黄逸晖 on 2018-08-02.

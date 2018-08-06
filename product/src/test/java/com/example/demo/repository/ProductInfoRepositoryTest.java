@@ -1,6 +1,7 @@
 package com.example.demo.repository;
 
-import com.example.demo.dataObject.ProductInfo;
+import com.example.product.dataObject.ProductInfo;
+import com.example.product.repository.ProductInfoRepository;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,8 +10,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by 黄逸晖 on 2018-08-01.
