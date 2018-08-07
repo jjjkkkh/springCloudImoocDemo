@@ -2,6 +2,8 @@ package com.example.product.controller;
 
 import com.example.product.dataObject.ProductCategory;
 import com.example.product.dataObject.ProductInfo;
+import com.example.product.dto.CartDTO;
+import com.example.product.exception.ProductException;
 import com.example.product.service.CategoryService;
 import com.example.product.service.ProductService;
 import com.example.product.utils.ResultVOUtil;
@@ -10,9 +12,7 @@ import com.example.product.vo.ProductVO;
 import com.example.product.vo.ResultVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -71,5 +71,28 @@ public class ProductController {
         }
 
         return ResultVOUtil.success(productVOList);
+    }
+
+
+    /**
+     * 获取商品列表（给订单服务调用）
+     * 参数使用了@RequestBody这个注解方法上面必须使用@PostMapping
+     * 如果参数里面使用@PathVariable ，@RequestParam这两个注解时可以使用@GetMapping
+     * @param productIdList
+     * @return
+     */
+    @PostMapping("/listForOrder")
+    public  List<ProductInfo> listForOrder(@RequestBody List<String> productIdList){
+        return  productService.findList(productIdList);
+    }
+
+    /**
+     * 扣库存
+     * @param cartDTOList
+     * @throws Exception
+     */
+    @PostMapping("/decreaseProductStock")
+    public void decreaseProductStock(@RequestBody List<CartDTO> cartDTOList) throws Exception {
+        productService.decreaseProductStock(cartDTOList);
     }
 }

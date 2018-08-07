@@ -1,6 +1,7 @@
 package com.example.order.dto;
 
 import com.example.order.dataObject.OrderDetail;
+import lombok.Data;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -8,6 +9,7 @@ import java.util.List;
 /**
  * Created by 黄逸晖 on 2018-08-06.
  */
+@Data
 public class OrderDTO {
     /** 订单id. */
     private String orderId;
